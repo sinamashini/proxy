@@ -4,7 +4,9 @@ const
     server = socks5.createServer();
 
 // start listening!
-server.listen(1080);
+server.listen(1080, '0.0.0.0', function () {
+    console.log('SOCKS5 proxy server started on 0.0.0.0:1080');
+});
 
 server.on('handshake', function (socket) {
     console.log();

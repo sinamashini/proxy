@@ -7,10 +7,12 @@
     "start": "nodemon -x node -r esm index.js"
   },
   "dependencies": {
+    "axios": "^0.21.4",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "net": "^1.0.2",
     "nodemon": "^2.0.12",
-    "simple-socks": "^2.2.1"
+    "simple-socks": "^2.2.1",
+    "socks-proxy-agent": "^6.0.0"
   }
 }
