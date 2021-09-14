@@ -4,6 +4,10 @@ import absolutify from 'absolutify';
 
 const app = express();
 
+const splitedBitch = (url) => {
+    return url.split('/')[0];
+}
+
 app.get('/', async (req, res) => {
     try {
         const { url } = req.query;
@@ -16,7 +20,7 @@ app.get('/', async (req, res) => {
             await page.goto(`https://${url}`);
 
             let document = await page.evaluate(() => document.documentElement.outerHTML);
-            document = absolutify(document, `?url=${url.split('/')[0]}`);
+            document = absolutify(document, `?${splitedBitch(url)}`);
             res.send(document)
         }
     } catch (err) {
